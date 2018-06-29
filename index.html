@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<title>Train Scheduler</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+	<script src="assets\css\style.css"></script>
+</head>
+
+<body>
+
+
+	<div class="jumbotron">
+		<div class="container">
+			<h1 class="display-4">Chicago Train Schedule</h1>
+			<p class="lead">See below for up to date arrival and departure times</p>
+		</div>
+	</div>
+
+	<!-- Schedule -->
+	<table class="table table-striped" id='train-table'>
+		<thead>
+			<tr>
+				<th scope="col">Train Name</th>
+				<th scope="col">Destination</th>
+				<th scope="col">Frequency (min)</th>
+				<th scope="col">Next Arrival</th>
+				<th scope="col">Minutes Away</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<td>Wrigley Rider</td>
+			<td>Wrigley Feild</td>
+			<td>5 min.</td>
+			<td>11:00 am</td>
+			<td>5 min.</td>
+		</tbody>
+	</table>
+
+	<!-- New train entry form -->
+	<form>
+		<div class="form-group">
+			<label for="exampleInputTrain">Train Name</label>
+			<input type="text" class="form-control" id="train-name-input" aria-describedby="emailHelp" placeholder="ex: Wrigley Rider">
+			<small id="trainHelp" class="enter the name of the train route you are looking for"></small>
+		</div>
+		<div class="form-group">
+			<label for="exampleInputDestination">Destination</label>
+			<input type="text" class="form-control" id="dest-input" placeholder="Wrigleyville">
+		</div>
+		<div class="form-group">
+			<label for="exampleInputTime">First Train Time (HH:mm - military time)</label>
+			<input type="text" class="form-control" id="firstTrain-input" placeholder="12:00">
+		</div>
+		<div class="form-group">
+			<label for="exampleInputFrequency">Frequency (min)</label>
+			<input type="text" class="form-control" id="freq-input" placeholder="5">
+		</div>
+		<button class="btn btn-success" id="add-train-btn" type="submit">Submit</button>
+	</form>
+
+	<!-- JavaScript -->
+	<script src="assets\javascript\app.js"></script>
+
+
+
+</body>
+
+</html>
